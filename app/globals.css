@@ -489,8 +489,7 @@ a:hover {
 .market-card-image-box {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  /* Increased height and width */
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
@@ -504,28 +503,13 @@ a:hover {
   transform: scale(1.05);
 }
 
-.market-card-details-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  transform: translateY(100%);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+.market-card-details-static {
+  margin-top: 0.5rem;
 }
 
-.market-card-modern:hover .market-card-details-overlay {
-  transform: translateY(0);
-}
-
-.market-card-details-overlay p {
-  color: var(--color-text);
-  font-size: 0.85rem;
-  /* Text should be small */
+.market-card-details-static p {
+  color: var(--color-text-light);
+  font-size: 1rem;
   line-height: 1.6;
   margin: 0;
 }
@@ -681,34 +665,28 @@ ul.bullet-list strong {
   margin-bottom: 0.25rem;
 }
 
-/* Micro-Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Scroll Animations */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
+.animate-fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .delay-100 {
-  animation-delay: 100ms;
+  transition-delay: 100ms;
 }
 
 .delay-200 {
-  animation-delay: 200ms;
+  transition-delay: 200ms;
 }
 
 .delay-300 {
-  animation-delay: 300ms;
+  transition-delay: 300ms;
 }
 
 /* Realistic 3D Glycine Molecule Animation */
@@ -850,17 +828,28 @@ ul.bullet-list strong {
 }
 
 .marquee-item {
-  flex: 0 0 200px; /* Fixed width for each logo wrapper */
+  flex: 0 0 200px;
+  /* Fixed width for each logo wrapper */
 }
 
 @keyframes scroll-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scroll-right {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .client-logo-wrapper {
@@ -882,5 +871,5 @@ ul.bullet-list strong {
 .client-logo-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  border-color: rgba(0,0,0,0.1);
+  border-color: rgba(0, 0, 0, 0.1);
 }

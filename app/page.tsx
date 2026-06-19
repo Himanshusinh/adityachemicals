@@ -1,9 +1,26 @@
+"use client";
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import HeroMolecules from '../components/3d/HeroMolecules';
+import NumberCounter from '../components/ui/NumberCounter';
 
 export default function Home() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-fade-in-up').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Head>
@@ -82,12 +99,12 @@ export default function Home() {
               <div className="market-card-modern animate-fade-in-up delay-100">
                 <h3 className="market-card-title">Pharmaceuticals</h3>
                 <div className="market-card-image-box">
-                  <Image src="/pharma-market.png" alt="Pharmaceuticals" fill style={{ objectFit: 'cover' }} />
-                  <div className="market-card-details-overlay">
-                    <p>
-                      Our high-performance APIs, developed in FDA-approved API manufacturing environments, meet stringent pharmaceutical regulatory compliance standards. As major API manufacturers, we are among the top food and pharmaceutical companies on which pharmaceutical leaders rely.
-                    </p>
-                  </div>
+                  <Image src="/pharma-market-169.png" alt="Pharmaceuticals" fill style={{ objectFit: 'cover' }} />
+                </div>
+                <div className="market-card-details-static">
+                  <p>
+                    Our high-performance APIs, developed in FDA-approved API manufacturing environments, meet stringent pharmaceutical regulatory compliance standards. As major API manufacturers, we are among the top food and pharmaceutical companies on which pharmaceutical leaders rely.
+                  </p>
                 </div>
               </div>
 
@@ -95,12 +112,12 @@ export default function Home() {
               <div className="market-card-modern animate-fade-in-up delay-200">
                 <h3 className="market-card-title">Nutritional Supplements</h3>
                 <div className="market-card-image-box">
-                  <Image src="/nutritional-market.png" alt="Nutritional Supplements" fill style={{ objectFit: 'cover' }} />
-                  <div className="market-card-details-overlay">
-                    <p>
-                      As trusted nutraceutical ingredient manufacturers, we provide fine-grade products and supplements. Furthermore, we offer low-heavy metal excipients, vitamins & derivatives that meet the diverse requirements of health-focused product formulation.
-                    </p>
-                  </div>
+                  <Image src="/nutritional-market-169.png" alt="Nutritional Supplements" fill style={{ objectFit: 'cover' }} />
+                </div>
+                <div className="market-card-details-static">
+                  <p>
+                    As trusted nutraceutical ingredient manufacturers, we provide fine-grade products and supplements. Furthermore, we offer low-heavy metal excipients, vitamins & derivatives that meet the diverse requirements of health-focused product formulation.
+                  </p>
                 </div>
               </div>
 
@@ -108,12 +125,12 @@ export default function Home() {
               <div className="market-card-modern animate-fade-in-up delay-300">
                 <h3 className="market-card-title">Food Additives</h3>
                 <div className="market-card-image-box">
-                  <Image src="/food-market.png" alt="Food Additives" fill style={{ objectFit: 'cover' }} />
-                  <div className="market-card-details-overlay">
-                    <p>
-                      Our high-priority food additive formulations enhance the taste profiles, improve texture, extend shelf life, and ensure unmatched food safety. Thus, we support industries in meeting ever-evolving global standards. From everyday staples to premium innovations, our additives empower brands.
-                    </p>
-                  </div>
+                  <Image src="/food-market-169.png" alt="Food Additives" fill style={{ objectFit: 'cover' }} />
+                </div>
+                <div className="market-card-details-static">
+                  <p>
+                    Our high-priority food additive formulations enhance the taste profiles, improve texture, extend shelf life, and ensure unmatched food safety. Thus, we support industries in meeting ever-evolving global standards. From everyday staples to premium innovations, our additives empower brands.
+                  </p>
                 </div>
               </div>
 
@@ -180,15 +197,15 @@ export default function Home() {
             {/* Stats Counters */}
             <div className="grid md:grid-cols-3 animate-fade-in-up delay-200" style={{ marginTop: '2rem' }}>
               <div className="stat-box">
-                <div className="stat-number">75+</div>
+                <div className="stat-number"><NumberCounter end={75} suffix="+" /></div>
                 <div className="stat-label uppercase tracking-wider text-sm font-semibold text-gray-500">NO. OF PRODUCTS</div>
               </div>
               <div className="stat-box">
-                <div className="stat-number">10+</div>
+                <div className="stat-number"><NumberCounter end={10} suffix="+" /></div>
                 <div className="stat-label uppercase tracking-wider text-sm font-semibold text-gray-500">OPERATIONAL COUNTRIES</div>
               </div>
               <div className="stat-box">
-                <div className="stat-number">30+</div>
+                <div className="stat-number"><NumberCounter end={30} suffix="+" /></div>
                 <div className="stat-label uppercase tracking-wider text-sm font-semibold text-gray-500">YEARS OF EXPERIENCE</div>
               </div>
             </div>
