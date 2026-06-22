@@ -73,7 +73,7 @@ export default function Home() {
             <div className="animate-fade-in-up delay-200" style={{ order: 1 }}>
               <div style={{ position: 'relative', width: '100%', height: '400px', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
                 <Image
-                  src="/about-us-bg.png"
+                  src="/aditya chemicals images/home page/home page images/magnific_massive-pharmaceutical-ma_mCc5jr4hJQ.png"
                   alt="Abstract Pharmaceutical Chemistry"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -85,6 +85,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Core Values Section */}
+        <section className="section section-light">
+          <div className="container">
+            <div className="text-center animate-fade-in-up" style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <h2 className="text-3xl md:text-4xl" style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>Our Core Values</h2>
+              <p className="text-lg text-muted">The foundational principles that drive our innovation and ensure the highest standards of safety globally.</p>
+            </div>
+
+            <div className="core-values-grid animate-fade-in-up delay-100">
+              <div className="value-card">
+                <div className="value-icon">🔬</div>
+                <h3>Unwavering Purity</h3>
+                <p>Stringent quality control to ensure pharmaceutical-grade excellence in every batch.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">🛡️</div>
+                <h3>Global Safety</h3>
+                <p>Adhering to the strictest international standards for FDA-approved manufacturing.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">💡</div>
+                <h3>Pioneering Innovation</h3>
+                <p>Continuously investing in R&D to lead the next generation of healthcare solutions.</p>
+              </div>
+              <div className="value-card">
+                <div className="value-icon">🤝</div>
+                <h3>Trusted Partnerships</h3>
+                <p>Building long-term, transparent relationships with the world's leading brands.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 4. "Our Markets" Section */}
         <section id="products" className="section section-surface">
           <div className="container">
@@ -93,44 +126,44 @@ export default function Home() {
               <p className="text-lg text-muted">We supply innovative solutions across the core sectors of:</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-lg">
+            <div className="market-accordion animate-fade-in-up delay-100">
 
-              {/* Card 1 */}
-              <div className="market-card-modern animate-fade-in-up delay-100">
-                <h3 className="market-card-title">Pharmaceuticals</h3>
-                <div className="market-card-image-box">
-                  <Image src="/pharma-market-169.png" alt="Pharmaceuticals" fill style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="market-card-details-static">
-                  <p>
-                    Our high-performance APIs, developed in FDA-approved API manufacturing environments, meet stringent pharmaceutical regulatory compliance standards. As major API manufacturers, we are among the top food and pharmaceutical companies on which pharmaceutical leaders rely.
-                  </p>
+              {/* Item 1 */}
+              <div className="accordion-item">
+                <Image src="/aditya chemicals images/home page/Our Markets/Pharmaceuticals/magnific_modern-pharmaceutical-inn_SOF33RsUb8.png" alt="Pharmaceuticals" fill style={{ objectFit: 'cover' }} />
+                <div className="accordion-overlay">
+                  <h3 className="accordion-title">Pharmaceuticals</h3>
+                  <div className="accordion-content">
+                    <p>
+                      Our high-performance APIs, developed in FDA-approved API manufacturing environments, meet stringent pharmaceutical regulatory compliance standards. As major API manufacturers, we are among the top food and pharmaceutical companies on which pharmaceutical leaders rely.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Card 2 */}
-              <div className="market-card-modern animate-fade-in-up delay-200">
-                <h3 className="market-card-title">Nutritional Supplements</h3>
-                <div className="market-card-image-box">
-                  <Image src="/nutritional-market-169.png" alt="Nutritional Supplements" fill style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="market-card-details-static">
-                  <p>
-                    As trusted nutraceutical ingredient manufacturers, we provide fine-grade products and supplements. Furthermore, we offer low-heavy metal excipients, vitamins & derivatives that meet the diverse requirements of health-focused product formulation.
-                  </p>
+              {/* Item 2 */}
+              <div className="accordion-item">
+                <Image src="/aditya chemicals images/home page/Our Markets/Nutritional Supplements/magnific_highend-nutraceutical-res_5xIwjbLKxe.png" alt="Nutritional Supplements" fill style={{ objectFit: 'cover' }} />
+                <div className="accordion-overlay">
+                  <h3 className="accordion-title">Nutritional Supplements</h3>
+                  <div className="accordion-content">
+                    <p>
+                      As trusted nutraceutical ingredient manufacturers, we provide fine-grade products and supplements. Furthermore, we offer low-heavy metal excipients, vitamins & derivatives that meet the diverse requirements of health-focused product formulation.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Card 3 */}
-              <div className="market-card-modern animate-fade-in-up delay-300">
-                <h3 className="market-card-title">Food Additives</h3>
-                <div className="market-card-image-box">
-                  <Image src="/food-market-169.png" alt="Food Additives" fill style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="market-card-details-static">
-                  <p>
-                    Our high-priority food additive formulations enhance the taste profiles, improve texture, extend shelf life, and ensure unmatched food safety. Thus, we support industries in meeting ever-evolving global standards. From everyday staples to premium innovations, our additives empower brands.
-                  </p>
+              {/* Item 3 */}
+              <div className="accordion-item">
+                <Image src="/aditya chemicals images/home page/Our Markets/Food Additives/magnific_premium-food-science-labo_gJQ6skvSXO.png" alt="Food Additives" fill style={{ objectFit: 'cover' }} />
+                <div className="accordion-overlay">
+                  <h3 className="accordion-title">Food Additives</h3>
+                  <div className="accordion-content">
+                    <p>
+                      Our high-priority food additive formulations enhance the taste profiles, improve texture, extend shelf life, and ensure unmatched food safety. Thus, we support industries in meeting ever-evolving global standards. From everyday staples to premium innovations, our additives empower brands.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -146,8 +179,6 @@ export default function Home() {
               <p className="text-lg text-muted" style={{ marginBottom: '2rem' }}>
                 For over 30 years, Aditya Chemicals has been a global manufacturer of high-purity APIs, Excipients, Food Additives, and Nutraceutical Ingredients, crafting tailored solutions across industries.
               </p>
-            </div>
-            <div className="animate-fade-in-up delay-100">
               <ul className="bullet-list">
                 <li>
                   <strong>Unwavering Innovation</strong> — Pioneer constantly developing new solutions.
@@ -160,19 +191,36 @@ export default function Home() {
                 </li>
               </ul>
             </div>
+
+            <div className="masonry-grid animate-fade-in-up delay-200">
+              <div className="masonry-item">
+                <Image src="/aditya chemicals images/home page/home page images/magnific_indian-pharmaceutical-inn_SOF3pgDUb8.png" alt="Innovation" fill />
+              </div>
+              <div className="masonry-item">
+                <Image src="/aditya chemicals images/home page/home page images/magnific_indian-pharmaceutical-qua_9RxWvcENYZ.png" alt="Quality Control" fill />
+              </div>
+              <div className="masonry-item">
+                <Image src="/aditya chemicals images/home page/home page images/magnific_indian-pharmaceutical-res_Pi1noj542C (1).png" alt="Research" fill />
+              </div>
+              <div className="masonry-item">
+                <Image src="/aditya chemicals images/home page/home page images/magnific_pharmaceutical-ingredient_SOF3Y4uUb8.png" alt="Ingredients" fill />
+              </div>
+            </div>
           </div>
         </section>
 
         {/* 6. "Advancing Health Through Innovation" Section */}
-        <section className="section section-surface">
-          <div className="container">
-            <div className="text-center animate-fade-in-up" style={{ maxWidth: '800px', margin: '0 auto 4rem auto' }}>
-              <h2 className="text-3xl md:text-4xl" style={{ marginBottom: '1.5rem' }}>Advancing Health Through Innovation</h2>
-              <p className="text-lg text-muted">
+        <section className="section section-surface" style={{ paddingTop: 0 }}>
+          <div className="innovation-banner animate-fade-in-up">
+            <div className="innovation-content">
+              <h2>Advancing Health Through Innovation</h2>
+              <p>
                 Innovation is positioned as the key to a healthier future, driven by an R&D team focused on pharma, food, and nutrition research.
               </p>
             </div>
+          </div>
 
+          <div className="container">
             <div className="grid md:grid-cols-3 gap-lg mb-8 animate-fade-in-up delay-100" style={{ marginBottom: '4rem' }}>
               <div className="card">
                 <div className="card-content">
@@ -300,15 +348,59 @@ export default function Home() {
         <section className="animate-fade-in-up">
           <div className="container">
             <div className="cta-banner">
-              <h2 className="text-3xl md:text-4xl" style={{ marginBottom: '1.5rem', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
-                Looking for high-purity APIs manufacturers? Or are you searching for a partner who understands your formulation needs?
-              </h2>
-              <p className="text-lg" style={{ marginBottom: '2.5rem', opacity: 0.9, maxWidth: '700px', margin: '0 auto 2.5rem auto' }}>
-                We built a partnership founded on collaborative innovation. Trusted globally. Crafted precisely. Aditya Chemicals - Powering Purity for Over 30 Years.
-              </p>
-              <Link href="#contact" className="btn btn-secondary" style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
-                Let's connect →
-              </Link>
+              <div className="cta-banner-content">
+
+                {/* Left Side: Value Propositions */}
+                <div className="cta-info">
+                  <h2 className="text-3xl md:text-4xl">
+                    Ready to elevate your formulations?
+                  </h2>
+                  <p className="text-lg" style={{ marginBottom: '2rem', opacity: 0.9 }}>
+                    We build partnerships founded on collaborative innovation and absolute precision. Aditya Chemicals has been powering purity for over 30 years.
+                  </p>
+
+                  <ul className="cta-features">
+                    <li>
+                      <span className="cta-icon">✓</span>
+                      <div>
+                        <strong>FDA-Approved Facilities</strong>
+                        <span>Ensuring the highest global compliance & safety standards.</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span className="cta-icon">✓</span>
+                      <div>
+                        <strong>High-Purity APIs</strong>
+                        <span>Crafting precision at a molecular level for top-tier pharma.</span>
+                      </div>
+                    </li>
+                    <li>
+                      <span className="cta-icon">✓</span>
+                      <div>
+                        <strong>Global Supply Chain</strong>
+                        <span>Exporting to 75+ countries with seamless logistics.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Right Side: Action Area */}
+                <div className="cta-action">
+                  <div className="cta-action-card">
+                    <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Let's innovate together.</h3>
+                    <p style={{ color: 'var(--color-text)', marginBottom: '2rem' }}>
+                      Speak directly with our chemical experts to discuss your specific bulk API or excipient needs.
+                    </p>
+                    <Link href="#contact" className="btn btn-primary" style={{ width: '100%', marginBottom: '1rem', padding: '1rem' }}>
+                      Connect with an Expert →
+                    </Link>
+                    <p style={{ color: 'var(--color-text-light)', fontSize: '0.9rem', margin: 0 }}>
+                      Typically replies within 24 hours.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </section>
