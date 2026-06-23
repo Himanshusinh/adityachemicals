@@ -1,52 +1,57 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
-      <div className="container flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/aditya-chemicals-in logo.jpg"
-            alt="Aditya Chemicals"
-            width={180}
-            height={60}
-            style={{
-              objectFit: 'contain',
-              mixBlendMode: 'multiply' /* Removes the white background on light surfaces */
-            }}
-            priority
-          />
-        </Link>
-
-        <div className="nav-desktop flex items-center gap-md">
-          <Link href="/" className="nav-link">Home</Link>
-          <Link href="#about" className="nav-link">About Us</Link>
-
-          {/* Products Dropdown */}
-          <div className="dropdown-container">
-            <Link href="#products" className="nav-link flex items-center" style={{ gap: '4px' }}>
-              Products
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center">
+          
+          <div className="site-branding">
+            <Link href="/" className="logo-text d-flex align-items-center">
+              <Image 
+                src="/aditya-chemicals-in logo.jpg" 
+                alt="Aditya Chemicals Logo" 
+                width={200} 
+                height={50} 
+                style={{ objectFit: 'contain', width: 'auto', height: '36px' }}
+                priority
+              />
             </Link>
-            <div className="dropdown-menu">
-              <Link href="#" className="dropdown-item">Amino Acids and Derivatives</Link>
-              <Link href="#" className="dropdown-item">Chelated Minerals (Calcium, Copper, Ferrous, Magnesium, Manganese, Potassium, Zinc)</Link>
-              <Link href="#" className="dropdown-item">Vitamins & Derivatives</Link>
-              <Link href="#" className="dropdown-item">Excipients</Link>
-            </div>
           </div>
 
-          <Link href="#certificates" className="nav-link">Certificates</Link>
-          <Link href="#events" className="nav-link">Events</Link>
-          <Link href="#contact" className="nav-link">Contact Us</Link>
-          <Link href="#" className="btn btn-primary text-sm" style={{ padding: '0.6rem 1.5rem', marginLeft: '1rem' }}>
-            Brochure (download)
-          </Link>
+          <nav className="d-none-sm">
+            <ul className="nav-menu">
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="#about">About Us</Link></li>
+              <li><Link href="#markets">Products</Link></li>
+              <li><Link href="#about">Certificates</Link></li>
+              <li><Link href="#about">Events</Link></li>
+              <li><Link href="#contact">Contact Us</Link></li>
+            </ul>
+          </nav>
+
+          <div className="nav-actions">
+            <a href="#contact" className="btn-brochure">
+              Brochure
+            </a>
+          </div>
+
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

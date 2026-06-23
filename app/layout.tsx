@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
-const inter = Inter({
+const ralewayBody = Raleway({
   subsets: ['latin'],
   variable: '--font-body',
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-const outfit = Outfit({
+const ralewayHeading = Raleway({
   subsets: ['latin'],
   variable: '--font-heading',
+  weight: ['400', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${outfit.variable}`}>
+      <body className={`${ralewayBody.variable} ${ralewayHeading.variable}`}>
         <Navbar />
         {children}
         <Footer />
